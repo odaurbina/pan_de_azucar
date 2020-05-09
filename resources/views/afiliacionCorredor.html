@@ -1,0 +1,147 @@
+@extends('layouts.app')
+ 
+@section('content')
+
+    <section class="home-slider-loop-false  inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('img/imagen6.jpg');">
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center">
+            <div class="col-md-8 text-center col-sm-12 element-animate">
+              <h1>Regístrate</h1>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- END slider -->
+    
+    <section class="section">
+    	<div class="container" align="center">
+    		<div class="col-md-6">
+    			
+		            	<div class="">
+				            <form action="RegistrarCorredor" method="post">@csrf
+				            	<p style="position:center">Datos personales:</p>
+				                <div class="row">
+				                    <div class="col-md-6"> 
+				                    	<div class="form-group">
+				    						<select class="form-control" id="nacionalidad">
+											    <option selected>Nacionalidad</option>
+											    <option value="">Venezolano</option>
+											    <option value="">Extranjero</option>
+											</select>
+			  							</div>
+				                    </div>  
+				                    <div class="col-md-6">
+				                       <div class="form-group">
+				    						<select class="form-control" id="tipo_doc">
+											    <option selected>Documento</option>
+											    <option value="">Pasaporte</option>
+											    <option value="">Cédula</option>
+											</select>
+			  							</div>
+				                    </div>
+				                </div><br>
+				               
+				                <div class="row">
+				                    <div class="col-md-6"> 
+				                      <div class="form-group">
+				    						<select class="form-control" id="sexo">
+											    <option selected>Sexo</option>
+											    <option value="">M</option>
+											    <option value="">F</option>
+											</select>
+			  							</div>
+				                    </div> 
+				                    <div class="col-md-6">
+				                      <input type="text" class="form-control" id="numero_doc" name="numero_doc" minlength="6" maxlength="8" pattern="[0-9]{6,8}" required="required" title="Sólo números de 6 a 8 dígitos." placeholder="Nº documento">
+				                    </div>
+				                </div><br>
+				               
+				                <div class="row">
+				                    <div class="col-md-6"> 
+				                    <input type="text" class="form-control" id="nombre" name="nombre" pattern="[A-Za-zñÑáéíóúüÁÉÍÓÚÜ]{3,30}" title="El nombre sólo puede tener caracteres alfabéticos." minlength="3" maxlength="30" required="required" placeholder="Nombre" data-pattern-error="El nombre sólo puede tener caracteres alfabéticos.">
+				                    </div> 
+				                    <div class="col-md-6">
+				                        <input type="text" class="form-control" id="apellido" name="apellido" pattern="[A-Za-zñÑáéíóúüÁÉÍÓÚÜ]{3,30}" title="El apellido sólo puede tener caracteres alfabéticos." minlength="5" maxlength="30" required="required" placeholder="Apellido" data-pattern-error="El apellido sólo puede tener caracteres alfabéticos."> 
+				                    </div>
+				                </div><br>
+				               
+				                <div class="row">
+				                    <div class="col-md-6"> 
+				                      <div class="form-group">
+				    					<input type="date" class="form-control" id="fecha_nac" name="fecha_nac" placeholder="F Nacimiento" title="El formato debe ser: D-M-A." data-pattern-error="La fecha debe tener el formato año-mes-día (1998-05-12 por ejemplo).">								
+			  							</div>
+				                    </div> 
+				                    <div class="col-md-6">
+				        				<div class="form-group">
+				    						<select class="form-control" id="sexo" name="sexo">
+											    <option selected>Corredor</option>
+											    <option value="">Ruta</option>
+											    <option value="">Montaña</option>
+											</select>
+			  							</div>
+				        		    </div>
+				                </div><br>
+				                
+				                <div class="row">
+				    
+
+				                 <div class="col-md-12"> 
+				                      <input type="text" class="form-control" id="direccion" name="direccion" required="required" placeholder="Dirección">
+				                    </div>  
+				                </div><br>
+
+				                <div class="row">
+				                    <div class="col-md-12"> 
+				                      <input type="email" class="form-control" id="correo" name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" data-pattern-error="La dirección de correo es inválida" placeholder="Correo" required="required">
+				                    </div>  
+				                </div><br>
+				               
+				               <p style="position:center">Composición Corporal:</p>
+				                <div class="row">
+				                  <div class="col-md-4">
+				                    <select class="form-control form-control-lg" id="edad" placeholder="edad" name="edad">
+				                      <option></option>
+				                      <option>1</option>
+				                    </select>
+				                  </div>
+				                  <div class="col-md-4">
+				                    <select class="form-control form-control-lg" id="peso" placeholder="peso" name="peso">
+				                      <option></option>
+				                      <option>1</option>
+				                    </select>
+				                  </div>
+				                  <div class="col-md-4">
+				                    <select class="form-control form-control-lg" id="estatura" placeholder="estatura" name="estatura">
+				                      <option></option>
+				                      <option>1</option>
+				                    </select>
+				                  </div>
+				                </div><br>
+				                Establecer contraseña:
+				                <div class="row">
+				                    <div class="col-md-6"> 
+				                          <input type="text" class="form-control" id="contraseña" name="contraseña" pattern="[A-Za-zñÑáéíóúüÁÉÍÓÚÜ]{3,30}" title="El nombre sólo puede tener caracteres alfabéticos" minlength="3" maxlength="30" required="required" placeholder="Contraseña" data-pattern-error="El nombre sólo puede tener caracteres alfabéticos"> 
+				                    </div>  
+				                    <div class="col-md-6">
+				                         <input type="text" class="form-control" id="repetirC" name="repetirC" pattern="[A-Za-zñÑáéíóúüÁÉÍÓÚÜ]{3,30}" title="El nombre sólo puede tener caracteres alfabéticos" minlength="3" maxlength="30" required="required" placeholder="Repetir contraseña" data-pattern-error="El nombre sólo puede tener caracteres alfabéticos"> 
+				                    </div>
+				                </div><br><br>
+				                <div class="row">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-8" align="center">
+                          <input type="submit" class="btn btn-primary btn-block py-3" value="Iniciar Sesion" style=" border:none; outline: none; border-radius: 20px; height: 45px;">
+                      </div>
+                    </div>
+				            </form>
+		            	</div>
+		            </div>
+				</div>
+          	</div>
+      	</div>
+    </section>
+
+@endsection
